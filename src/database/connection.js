@@ -1,5 +1,5 @@
 const mongoose = require("mongoose"); 
-mongoose.connect("mongodb://localhost:27017/olympics" 
+mongoose.connect("mongodb://localhost:27017/bookRecipe" 
 // {
 //     useCreateIndex:true,
 //     useNewUrlParser:true,
@@ -8,5 +8,5 @@ mongoose.connect("mongodb://localhost:27017/olympics"
 ).then(()=>{
     console.log("Connection successful")
 }).catch((err) =>{
-    console.log("No Connection")
+    console.log("No  Connection")
 })

@@ -1,27 +1,28 @@
 const express = require("express");
 const router = express.Router();
+const bookRecipe = require("../models/bookRecipeSchema");
 const {
-  postMens,
-  getMens,
-  singleGetMens,
-  deleteMens,
-  updateMens,
-} = require("../controllers/mensControllers");
+  postFoodRecipe,
+  getFoodRecipe,
+  getFoodRecipeWithId,
+  updateFoodRecipe,
+  deleteFoodRecipe,
+} = require("../controllers/bookRecipeController");
+// ============================ all food recipe collection ==================
+// post food item
+router.post("/allFoodRecipe", postFoodRecipe);
 
-// post data
-router.post("/mens", postMens);
+// get all food item
+router.get("/allFoodRecipe", getFoodRecipe);
 
-// get data
-router.get("/mens", getMens);
+// get food item
+router.get("/allFoodRecipe/:id", getFoodRecipeWithId);
 
-// get unique Data
-router.get("/mens/:id", singleGetMens);
+// update data using id
+router.put("/allFoodRecipe/:id", updateFoodRecipe);
 
-// delete unique data
-router.delete("/mens/:id", deleteMens);
-
-// updata data
-router.patch("/mens/:id", updateMens);
+// delete food item
+router.delete("/allFoodRecipe/:id", deleteFoodRecipe);
 
 router.get("/", (req, res) => {
   res.send("Start Server");
