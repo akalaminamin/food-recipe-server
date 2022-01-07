@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const bookRecipe = require("../models/bookRecipeSchema");
 const {
   postFoodRecipe,
   getFoodRecipe,
