@@ -3,8 +3,10 @@ const bookRecipe = require("../models/bookRecipeSchema");
 exports.postFoodRecipe = async (req, res) => {
   try {
     const recipeData = new bookRecipe(req.body);
+    console.log(recipeData)
     const insertFoods = await recipeData.save();
     res.status(201).send(insertFoods);
+    console.log(insertFoods)
   } catch (error) {
     res.status(400).send(error);
   }
