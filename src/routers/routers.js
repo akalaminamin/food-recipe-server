@@ -21,7 +21,19 @@ router.get("/allFoodRecipe/:id", getFoodRecipeWithId);
 router.put("/allFoodRecipe/:id", updateFoodRecipe);
 
 // delete food item
-router.delete("/allFoodRecipe/:id", deleteFoodRecipe);
+router.delete("/allFoodRecipe/:id", async (req, res) => {
+  try {
+    console.log(req.params.id);
+    const result = await bookRecipe.findByIdAndDelete(req.params.id, req.body, {
+      new: true,
+    });
+    console.log(result);
+    res.json(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500);
+  }
+});
 
 router.get("/", (req, res) => {
   res.send("Start Server");
