@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 const bookRecipeSchema = new mongoose.Schema({
   name: String,
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-  },
+  email: String,
   recipeName: String,
   cusine: String,
   category: String,
