@@ -19,18 +19,18 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-    const foodRecipeCollection = client.db("recipe-book").collection("BookRecipe");
+    const foodRecipeCollection = client.db("recipe-book").collection("BookRecipe"); 
 
     app.post("/allFoodRecipe", async (req, res) => {
         const cursor = req.body;
-        console.log(req.body)
+        console.log(req.body) 
         const result = await foodRecipeCollection.insertOne(cursor);
         res.json(result);
       });
 
   //   app.post('/allFoodRecipe', async (req, res) => {
   //     const name = req.body.name;
-  //     const email = req.body.email;
+  //     const email = req.body.email;  
   //     const recipeName = req.body.recipeName;
   //     const cuisine = req.body.cuisine;
   //     const category = req.body.category;
@@ -49,7 +49,7 @@ async function run() {
   //         category,
   //         author,
   //         ingredients,
-  //         method,
+  //         method, 
   //         image: imageBuffer
   //     }
   //     const result = await recipePostReqCollection.insertOne(food);
