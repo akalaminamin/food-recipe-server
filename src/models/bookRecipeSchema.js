@@ -13,6 +13,7 @@ const bookRecipeSchema = new mongoose.Schema({
   },
   method: String,
   RecipeImage: String,
+  userEmail:String
 });
 
 const bookRecipe = new mongoose.model("bookRecipe", bookRecipeSchema);
